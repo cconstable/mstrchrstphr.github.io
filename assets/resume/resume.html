@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr { 
+    background: #cccccc;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+</style>
+<title>Recent Employment</title>
+
+</head>
+<body>
+<!-- Hey there! This is best viewed using a Markdown editor such as Mou. -->
+
+
+
+
+<center>
+<h1>Christopher Constable</h1>
+chris@futura.io - 561-758-0089 <br />
+http://futura.io - http://elke.io - http://theanalogschool.com <br />
+Twitter & Github: mstrchrstphr <br />
+BS in Computer Science - University of Central Florida (2010)
+</center>
+
+
+<p>I'm a software engineer who's passionate about improving people's lives through technology. Things I love: Education technology, clean expressive code, delightful user experiences, math, and teaching what I love to others.</p>
+
+<h4>Recent Employment</h4>
+
+<hr />
+
+<p><strong>The Analog School</strong> | Founder | iOS Instructor <code>iOS</code>, <code>Android</code>, <code>Ember.js</code><br/>
+<em>2013 - current</em><br/>
+Founded a mobile development school that focuses on providing hands-on, real-world experience to aspiring  mobile developers or seasoned developers looking to sharpen their skills. In the past year, I've had over 450 hours of teaching time covering all aspects of iOS development including Objective-C, version control, debugging skills, app deployment, BDD (cucumber, etc), continuous integration, and user experience.</p>
+
+<p><strong>Futura IO</strong> | Founder | Mobile Lead <code>Objective-C</code>, <code>HTML 5</code>, <code>Javascript</code><br/>
+<em>2012 - current</em><br/>
+Founded a mobile development studio focused on building products the connect people. Our clients include Creative Mornings, Envy Labs (Code School), Surfr and Traffic Labs. Architected highly scalable social apps.</p>
+
+<p><strong>Allogy Interactive</strong> | iOS Engineer <code>Objective-C</code>, <code>C++</code>, <code>Java</code><br/>
+<em>2009 - 2012</em><br/>
+Worked on a team developing an education technology stack that included iOS and Android apps. The learning platform we developed has since been used all over world in a variety of industries including education institutions, medical, and government.</p>
+
+<p><strong>ACTIVE Neuroergonomics</strong> | R&amp;D | Software Engineer <code>C++</code>, <code>Matlab</code>, <code>DSP</code>, <code>Computer Vision</code><br/>
+<em>2008 - 2009</em><br/>
+Developed software to read, filter and aggregate biometric sensor data (e.g. EEG, EKG, GSR, etc). Notable accomplishments included writing a novel algorithm for (fast) face detection on mobile devices and algorithms for removing myographic artifacts (muscle noise) in an EKG signal.</p>
+
+<p><strong>Lockheed Martin</strong> | Software Intern <code>C++</code>, <code>C</code><br/>
+<em>2008 (one year)</em></p>
+
+<h4>Recent Projects</h4>
+
+<hr />
+
+<ul>
+<li><strong>Creative Mornings</strong> - iOS App - Developed check-in app for Creative Mornings organizers world wide.</li>
+<li><strong>Try iOS (Code School)</strong> - iOS Curriculum - Co-authored Code School's Try iOS course.</li>
+<li><strong>120-hour iOS Foundations Course</strong> - iOS Curriculum for The Analog School.</li>
+<li><strong>Surfr</strong> - iOS App - Lead engineer on surfing social networking app.</li>
+<li><strong>Traffic</strong> - iOS App - Lead engineer on Yelp-like restaurant review app.</li>
+<li><strong>Ember.js: Foundations</strong> - eBook - An introduction to Ember.js (WIP).</li>
+</ul>
+
+
+<h4>Open Source</h4>
+
+<hr />
+
+<p>I actively contribute to open source software. Recent contributions include...</p>
+
+<ul>
+<li><strong>LocationPickerView</strong>. MKMapView + UITableView + Parallax scrolling. Provides a framework for building an interactive location picker on iOS.</li>
+<li><strong>Parse Model</strong>, a third-party, open-source extension of the Parse iOS SDK. Parse later included this functionality into their iOS SDK.</li>
+<li><strong>OCR-iOS</strong>. A simple example of how to do optical character recognition (OCR) on iOS.</li>
+</ul>
+
+
+<p>I contribute to <a href="http://cocoapods.org/">Cocoapods</a>. See my <a href="https://github.com/mstrchrstphr">Github profile</a> for more information.</p>
+
+<h4>Recent Speaking Engagements</h4>
+
+<hr />
+
+<ul>
+<li>(March 2013 - Present) Various iOS training courses around FL each lasting between (40 - 120hrs).</li>
+<li>(March 2014) iOS Meetup Presenter on iBeacons and BLE - Orlando, FL.</li>
+<li>(November 2013) Guest Lecturer at Santa Fe College for iOS: Foundations course (120 hours). Gainesville, FL.</li>
+<li>(June 2013) iOS Meetup Panelist - Orlando, FL.</li>
+<li>(November 2012) Digital Think Tank 2012 (One Hope) Mobile Trends Panelist - Hong Kong, China.</li>
+<li>(June 2012) Mobile Consultant for Allogy Interactive - New Dheli, India.</li>
+</ul>
+
+
+<p><br /></p>
+
+<center>Additional material at http://elke.io</center>
+
+
+
+</body>
+</html>
