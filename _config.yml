@@ -2,7 +2,6 @@ name: "elke"
 author: "Christopher Constable"
 description: Developer // Co-Founder at Futura IO and Analog School
 url: elke.io
-baseurl: elke.io
 
 markdown: redcarpet
 permalink: :year/:month/:title.html
